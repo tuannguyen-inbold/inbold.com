@@ -24,12 +24,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>body{margin:0;background:#f8f7f3}*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{overflow-x:hidden}a{color:#ff5a2b}a:hover{color:#c8431a}summary::-webkit-details-marker{display:none}</style>
 <script src="./image-slot.js"></script>
+<script src="./bp.js"></script>
 </helmet>
 <div data-screen-label="Insight article" style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#10201b;background:#f8f7f3">
-  <dc-import name="Nav" active="insights" tone="light" accent="#ff5a2b" hint-size="100%,100px"></dc-import>
+  <dc-import name="Nav" mode="global" active="insights" tone="light" accent="#ff5a2b" hint-size="100%,100px" style="position:sticky;top:0;z-index:90"></dc-import>
   <!-- ARTICLE HEADER -->
-  <section style="max-width:1360px;margin:0 auto;padding:40px 28px 0">
-    <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45"><a href="Home.dc.html" style="color:#3d4a45;text-decoration:none">Home</a> / <a href="Insights.dc.html" style="color:#3d4a45;text-decoration:none">Insights</a> / <span style="color:#10201b">[Category]</span></div>
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:40px 28px 0">
+    <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45"><a href="Home v2.dc.html" style="color:#3d4a45;text-decoration:none">Home</a> / <a href="Insights.dc.html" style="color:#3d4a45;text-decoration:none">Insights</a> / <span style="color:#10201b">[Category]</span></div>
     <div style="max-width:860px;margin-top:32px">
       <span style="display:inline-block;background:#ff5a2b;color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px">[Category]</span>
       <h1 style="font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.025em;margin:18px 0 0;text-wrap:balance">[Article title: a clear claim or question, max 70 characters]</h1>
@@ -42,7 +43,7 @@
     <image-slot id="article-hero" style="display:block;width:100%;height:auto;aspect-ratio:21/9;margin-top:36px;background:#e9dfc8" shape="rect" placeholder="Hero image, 21:9"></image-slot>
   </section>
   <!-- BODY -->
-  <section style="max-width:1360px;margin:0 auto;padding:48px 28px 64px">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:48px 28px 64px">
     <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
       <!-- side: key takeaways -->
       <aside style="background:#e9dfc8;padding:24px;flex:1 1 280px;max-width:420px">
@@ -85,14 +86,14 @@
     </div>
   </section>
   <!-- RELATED -->
-  <section style="background:#e9dfc8"><div style="max-width:1360px;margin:0 auto;padding:56px 28px">
+  <section style="background:#e9dfc8"><div data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:26px"><div><div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Keep reading</div><h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 0">More insights</h2></div><a href="Insights.dc.html" style="color:#10201b;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:2px solid #ff5a2b;padding-bottom:2px">All insights →</a></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:6px">
+    <div data-g="m" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:6px">
       <a href="Article.dc.html" style="text-decoration:none;color:#10201b;background:#f8f7f3;display:flex;flex-direction:column"><image-slot id="article-related-1" style="display:block;width:100%;height:auto;aspect-ratio:16/10;background:#d9cdb3" shape="rect" placeholder="Image"></image-slot><div style="padding:18px 20px 22px"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ff5a2b">AI & production</div><div style="font-weight:800;font-size:19px;line-height:1.25;margin-top:6px">[Related article title]</div><div style="font-size:13px;color:#3d4a45;margin-top:10px">[Date] · [5] min read</div></div></a><a href="Article.dc.html" style="text-decoration:none;color:#10201b;background:#f8f7f3;display:flex;flex-direction:column"><image-slot id="article-related-2" style="display:block;width:100%;height:auto;aspect-ratio:16/10;background:#d9cdb3" shape="rect" placeholder="Image"></image-slot><div style="padding:18px 20px 22px"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ff5a2b">PR</div><div style="font-weight:800;font-size:19px;line-height:1.25;margin-top:6px">[Related article title]</div><div style="font-size:13px;color:#3d4a45;margin-top:10px">[Date] · [5] min read</div></div></a><a href="Article.dc.html" style="text-decoration:none;color:#10201b;background:#f8f7f3;display:flex;flex-direction:column"><image-slot id="article-related-3" style="display:block;width:100%;height:auto;aspect-ratio:16/10;background:#d9cdb3" shape="rect" placeholder="Image"></image-slot><div style="padding:18px 20px 22px"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ff5a2b">Digital & media</div><div style="font-weight:800;font-size:19px;line-height:1.25;margin-top:6px">[Related article title]</div><div style="font-size:13px;color:#3d4a45;margin-top:10px">[Date] · [5] min read</div></div></a>
     </div>
   </div></section>
   <!-- CTA -->
-  <section style="background:#0b3d32"><div style="max-width:1360px;margin:0 auto;padding:60px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+  <section style="background:#0b3d32"><div data-pad style="max-width:1360px;margin:0 auto;padding:60px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
     <h2 style="font-weight:800;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;margin:0;color:#fff;max-width:20ch">Want to talk about this for your brand?</h2>
     <a href="Book a Call.dc.html" style="background:#ff5a2b;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:2px;text-decoration:none;white-space:nowrap">Book a call</a>
   </div></section>

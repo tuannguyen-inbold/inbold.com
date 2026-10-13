@@ -16,11 +16,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>body{margin:0;background:#f8f7f3}*{box-sizing:border-box}html{scroll-behavior:smooth}a{color:#ff5a2b}a:hover{color:#d9441a}</style>
+<script src="./bp.js"></script>
 </helmet>
 <div data-screen-label="Production · Compliance" style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#10201b;background:#f8f7f3">
-  <dc-import name="Nav" mode="production" active="compliance" tone="light" accent="#ff5a2b" hint-size="100%,100px"></dc-import>
+  <dc-import name="Nav" mode="production" active="compliance" tone="light" accent="#ff5a2b" hint-size="100%,100px" style="position:sticky;top:0;z-index:90"></dc-import>
 
-  <section style="max-width:1360px;margin:0 auto;padding:46px 28px 0">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:46px 28px 0">
     <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Production / Compliance and sustainability</div>
     <h1 style="font-weight:800;font-size:clamp(32px,4.8vw,58px);line-height:1.05;letter-spacing:-.025em;margin:16px 0 0;max-width:18ch">What your procurement team needs to know</h1>
     <p style="max-width:58ch;font-size:17px;line-height:1.6;color:#3d4a45;margin:18px 0 0">Our policies, our security setup and the company facts a supplier assessment asks for, on one page. If something you need is not here, ask us and we will tell you whether we have it.</p>
@@ -28,12 +29,12 @@
       <a href="Production.dc.html#contact" style="background:#ff5a2b;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:2px;text-decoration:none;white-space:nowrap">Book 20 minutes</a>
       <a href="Production.dc.html#clients" style="color:#10201b;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:2px solid #ff5a2b;padding-bottom:2px;white-space:nowrap">See the work →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px;margin-top:40px">
+    <div data-g="m" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px;margin-top:40px">
       <img src="img/prod/building-saigon.webp" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
       <img src="img/prod/reception-saigon.webp" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
       <img src="img/prod/team-saigon.webp" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;border-top:1px solid rgba(16,32,27,.16);margin-top:22px;padding:18px 0 46px">
+    <div data-g="s" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;border-top:1px solid rgba(16,32,27,.16);margin-top:22px;padding:18px 0 46px">
       <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">UN Global Compact</div><div style="font-size:14.5px;font-weight:600;margin-top:6px">Member since 2015</div></div>
       <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">Data transfer</div><div style="font-size:14.5px;font-weight:600;margin-top:6px">EU Standard Contractual Clauses</div></div>
       <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">AI policy</div><div style="font-size:14.5px;font-weight:600;margin-top:6px">Version 1.1, reviewed yearly</div></div>
@@ -42,7 +43,7 @@
   </section>
 
   <section style="background:#e9dfc8">
-    <div style="max-width:1360px;margin:0 auto;padding:56px 28px">
+    <div data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
       <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Documents</div>
       <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 10px">Policies and reports</h2>
       <p style="font-size:15.5px;color:#3d4a45;margin:0 0 24px">All documents are public. Open them without asking us first.</p>
@@ -52,7 +53,7 @@
     </div>
   </section>
 
-  <section style="max-width:1360px;margin:0 auto;padding:56px 28px">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
     <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Data and security</div>
     <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 28px">Where your material sits, and who can reach it</h2>
     <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;align-items:start">
@@ -65,7 +66,7 @@
         <img src="img/prod/reception-saigon.webp" alt="" style="width:100%;aspect-ratio:16/8;object-fit:cover;display:block">
         <h3 style="font-size:22px;font-weight:700;margin:20px 0 0">{{ secSel.label }}</h3>
         <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#3d4a45;max-width:60ch">{{ secSel.lead }}</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;margin-top:22px">
+        <div data-g="s" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;margin-top:22px">
           <sc-for list="{{ secSel.points }}" as="pt" hint-placeholder-count="3"><div style="border-top:1px solid rgba(16,32,27,.25);padding-top:12px;font-size:13.5px;line-height:1.5"><div style="font-size:11px;color:#ff5a2b;margin-bottom:6px">{{ pt.n }}</div>{{ pt.t }}</div></sc-for>
         </div>
       </div>
@@ -73,7 +74,7 @@
   </section>
 
   <section id="ai" style="background:#0b3d32;color:#fff;scroll-margin-top:110px">
-    <div style="max-width:1360px;margin:0 auto;padding:56px 28px">
+    <div data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
       <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#e9dfc8">AI in production</div>
       <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 28px">How we use it, and where we stop</h2>
       <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;align-items:start">
@@ -85,7 +86,7 @@
         <div>
           <h3 style="font-size:24px;font-weight:700;margin:0">{{ aiSel.label }}</h3>
           <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#cfe0d9;max-width:60ch">{{ aiSel.lead }}</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;margin-top:24px">
+          <div data-g="s" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;margin-top:24px">
             <sc-for list="{{ aiSel.points }}" as="pt" hint-placeholder-count="3"><div style="border-top:1px solid rgba(255,255,255,.3);padding-top:12px;font-size:13.5px;line-height:1.5"><div style="font-size:11px;color:#e9dfc8;margin-bottom:6px">{{ pt.n }}</div>{{ pt.t }}</div></sc-for>
           </div>
         </div>
@@ -93,10 +94,10 @@
     </div>
   </section>
 
-  <section style="max-width:1360px;margin:0 auto;padding:56px 28px">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
     <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Sustainability and people</div>
     <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 28px">How we hold ourselves to account</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
+    <div data-g="m" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
       <div style="border-top:1px solid #10201b;padding-top:14px"><div style="font-weight:700;font-size:16px">UN Global Compact since 2015</div><p style="margin:8px 0 0;font-size:14.5px;line-height:1.55;color:#3d4a45">The ten principles on human rights, labor, environment and anti-corruption are part of how we run the company.</p></div>
       <div style="border-top:1px solid #10201b;padding-top:14px"><div style="font-weight:700;font-size:16px">Our people in Saigon are our employees</div><p style="margin:8px 0 0;font-size:14.5px;line-height:1.55;color:#3d4a45">160+ in-house specialists. We are an equal opportunity employer with an open-door policy.</p></div>
       <div style="border-top:1px solid #10201b;padding-top:14px"><div style="font-weight:700;font-size:16px">Green claims</div><p style="margin:8px 0 0;font-size:14.5px;line-height:1.55;color:#3d4a45">Environmental claims on ads and packaging are checked against the EU EmpCo rules before delivery.</p></div>
@@ -104,7 +105,7 @@
   </section>
 
   <section style="background:#e9dfc8">
-    <div style="max-width:1360px;margin:0 auto;padding:56px 28px">
+    <div data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
       <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">For your vendor form</div>
       <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 24px">Company facts</h2>
       <div style="max-width:900px">
@@ -115,7 +116,7 @@
     </div>
   </section>
 
-  <section style="max-width:1360px;margin:0 auto;padding:56px 28px">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:56px 28px">
     <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45">Questions we get</div>
     <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 24px;max-width:26ch">What procurement asks that the documents do not answer</h2>
     <div style="max-width:780px;display:flex;flex-direction:column">
@@ -129,7 +130,7 @@
   </section>
 
   <section style="background:#0b3d32;color:#fff">
-    <div style="max-width:1360px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:end">
+    <div data-g="l" data-pad style="max-width:1360px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:end">
       <div>
         <h2 style="font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:0">Send us your supplier questionnaire</h2>
         <p style="margin:12px 0 0;font-size:15.5px;line-height:1.6;color:#cfe0d9;max-width:56ch">We fill it in and tell you plainly where we meet the requirement and where we do not yet.</p>

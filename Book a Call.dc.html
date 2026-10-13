@@ -22,23 +22,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>body{margin:0;background:#f8f7f3}*{box-sizing:border-box}</style>
+<script src="./bp.js"></script>
 </helmet>
 <div data-screen-label="Book a call" style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#10201b;background:#f8f7f3">
-  <dc-import name="Nav" active="book" tone="light" accent="#ff5a2b" hint-size="100%,62px"></dc-import>
+  <dc-import name="Nav" mode="global" active="book" tone="light" accent="#ff5a2b" hint-size="100%,62px" style="position:sticky;top:0;z-index:90"></dc-import>
 
-  <div style="max-width:1360px;margin:0 auto;padding:22px 28px 0;font-size:13px;color:#3d4a45">
-    <a href="Home.dc.html" style="color:#3d4a45;text-decoration:none">Home</a> › <b style="color:#10201b">Book a call</b>
+  <div data-pad style="max-width:1360px;margin:0 auto;padding:22px 28px 0;font-size:13px;color:#3d4a45">
+    <a href="Home v2.dc.html" style="color:#3d4a45;text-decoration:none">Home</a> › <b style="color:#10201b">Book a call</b>
   </div>
 
   <!-- HERO -->
-  <section style="max-width:1360px;margin:0 auto;padding:30px 28px 0">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:30px 28px 0">
     <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#3d4a45">Let's talk</div>
     <h1 style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(38px,6vw,80px);line-height:1;letter-spacing:-.03em;margin:18px 0 0;max-width:16ch">Tell us what you need.</h1>
     <p style="max-width:56ch;font-size:18px;line-height:1.6;color:#3d4a45;margin:22px 0 0">One service or all six — we'll point you to the senior partner who owns it. A call, not just a form.</p>
   </section>
 
   <!-- FORM + DIRECT -->
-  <section style="max-width:1360px;margin:0 auto;padding:44px 28px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start">
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:44px 28px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start">
     <form onsubmit="return false" style="background:#ffffff;border:1px solid rgba(16,32,27,.12);border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 14px 40px rgba(16,32,27,.06)">
       <div style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:22px;font-weight:700">Send a message</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
@@ -78,7 +79,7 @@
     </div>
   </section>
 
-  <section style="max-width:1360px;margin:0 auto;padding:40px 28px 70px"></section>
+  <section data-pad style="max-width:1360px;margin:0 auto;padding:40px 28px 70px"></section>
   <dc-import name="Footer" hint-size="100%,360px"></dc-import>
 </div>
 </x-dc>
