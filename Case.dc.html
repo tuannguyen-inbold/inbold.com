@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case | InBold</title>
+<meta name="description" content="Case study from InBold.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://inbold.com/#org","name":"InBold","url":"https://inbold.com","email":"hello@inbold.com","numberOfEmployees":147,"foundingDate":"2024","sameAs":["https://www.linkedin.com/company/inbold-1","https://www.facebook.com/inboldagency","https://www.instagram.com/inbold_agency/"],"address":[{"@type":"PostalAddress","streetAddress":"Dronningens Tværgade 7B","postalCode":"1302","addressLocality":"Copenhagen K","addressCountry":"DK"},{"@type":"PostalAddress","streetAddress":"Götgatan 22A","postalCode":"118 46","addressLocality":"Stockholm","addressCountry":"SE"},{"@type":"PostalAddress","streetAddress":"Kristian Augusts gate 12","postalCode":"0164","addressLocality":"Oslo","addressCountry":"NO"},{"@type":"PostalAddress","streetAddress":"400/8b-10 Ung Van Khiem, Thanh My Tay Ward","postalCode":"","addressLocality":"Ho Chi Minh City","addressCountry":"VN"}]}</script>
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f8f7f3">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f8f7f3"/>
+    <text x="600" y="400" font-family="Georgia, serif" font-size="170" font-weight="700" fill="#10201b" text-anchor="middle">InBold<tspan fill="#ff5a2b">.</tspan></text>
+    <text x="600" y="490" font-family="Arial, sans-serif" font-size="42" letter-spacing="8" fill="#3d4a45" text-anchor="middle">WORK</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#f8f7f3}*{box-sizing:border-box}html,body{overflow-x:hidden}a{color:#ff5a2b}a:hover{color:#c8431a}</style>
+<script src="./cases.js"></script>
+</helmet>
+<div data-screen-label="Case" style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#10201b;background:#f8f7f3">
+  <dc-import name="Nav" active="work" tone="light" accent="#ff5a2b" hint-size="100%,100px"></dc-import>
+  <!-- HERO -->
+  <section style="max-width:1360px;margin:0 auto;padding:40px 28px 0">
+    <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d4a45"><a href="Home.dc.html" style="color:#3d4a45;text-decoration:none">Home</a> / <a href="Work.dc.html" style="color:#3d4a45;text-decoration:none">Work</a> / <span style="color:#10201b">{{ c.client }}</span></div>
+    <div style="margin-top:24px;font-size:13px;font-weight:700;color:#ff5a2b">{{ c.service }}</div>
+    <h1 style="font-weight:800;font-size:clamp(32px,5vw,62px);line-height:1.05;letter-spacing:-.025em;margin:12px 0 0;max-width:22ch;text-wrap:balance">{{ c.headline }}</h1>
+    <div style="width:100%;aspect-ratio:21/9;margin-top:32px;background-color:#d9cdb3;background-size:cover;background-position:center;background-image:{{ bgimg }}"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;border-bottom:1px solid rgba(16,32,27,.16);padding:20px 0 40px">
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">Client</div><div style="font-size:15px;font-weight:700;margin-top:6px">{{ c.client }}</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">Service</div><div style="font-size:15px;font-weight:700;margin-top:6px">{{ c.service }}</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">Market</div><div style="font-size:15px;font-weight:700;margin-top:6px">{{ c.market }}</div></div>
+    </div>
+  </section>
+  <!-- STORY -->
+  <section style="max-width:1360px;margin:0 auto;padding:48px 28px 56px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:36px">
+      <sc-for list="{{ story }}" as="s" hint-placeholder-count="3">
+        <div style="border-top:2px solid #10201b;padding-top:16px"><div style="font-size:12px;font-weight:700;color:#ff5a2b">{{ s.n }}</div><h2 style="font-weight:800;font-size:22px;margin:6px 0 10px">{{ s.t }}</h2><p style="margin:0;font-size:15.5px;line-height:1.65;color:#3d4a45">{{ s.d }}</p></div>
+      </sc-for>
+    </div>
+  </section>
+  <!-- RESULTS -->
+  <sc-if value="{{ hasMetrics }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#0b3d32"><div style="max-width:1360px;margin:0 auto;padding:56px 28px">
+      <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#e9dfc8">Results</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;margin-top:22px">
+        <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3"><div style="border-top:2px solid rgba(255,255,255,.3);padding-top:14px"><div style="font-weight:800;font-size:clamp(36px,4.5vw,60px);line-height:1;letter-spacing:-.03em;color:#ff5a2b">{{ m.v }}</div><div style="font-size:15px;color:rgba(255,255,255,.85);margin-top:8px">{{ m.k }}</div></div></sc-for>
+      </div>
+    </div></section>
+  </sc-if>
+  <!-- QUOTE -->
+  <sc-if value="{{ hasQuote }}" hint-placeholder-val="{{ false }}">
+    <section style="max-width:1360px;margin:0 auto;padding:56px 28px">
+      <figure style="margin:0;max-width:880px"><span style="display:block;font-size:64px;line-height:.6;font-weight:800;color:#ff5a2b;height:32px">“</span><blockquote style="margin:0;font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.4;text-wrap:pretty">{{ quote.q }}</blockquote><figcaption style="margin-top:18px;font-size:14px;color:#3d4a45"><b style="color:#10201b">{{ quote.n }}</b> — {{ quote.r }}</figcaption></figure>
+    </section>
+  </sc-if>
+  <!-- NEXT -->
+  <section style="background:#e9dfc8"><div style="max-width:1360px;margin:0 auto;padding:40px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px">
+    <a href="Work.dc.html" style="color:#10201b;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:2px solid #ff5a2b;padding-bottom:2px">← All work</a>
+    <a href="{{ next.href }}" style="text-decoration:none;color:#10201b;text-align:right"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3d4a45">Next case</div><div style="font-weight:800;font-size:22px;margin-top:4px">{{ next.client }} →</div></a>
+  </div></section>
+  <!-- CTA -->
+  <section style="background:#0b3d32"><div style="max-width:1360px;margin:0 auto;padding:60px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+    <h2 style="font-weight:800;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;margin:0;color:#fff;max-width:20ch">Have a brief like this?</h2>
+    <a href="Book a Call.dc.html" style="background:#ff5a2b;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:2px;text-decoration:none;white-space:nowrap">Book a call</a>
+  </div></section>
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ready: !!window.INBOLD_CASES };
+  componentDidMount(){ if(!this.state.ready){ this.iv=setInterval(()=>{ if(window.INBOLD_CASES){ clearInterval(this.iv); this.setState({ready:true}); } },60); } }
+  componentWillUnmount(){ clearInterval(this.iv); }
+  renderVals(){
+    const all=window.INBOLD_CASES||[];
+    if(!all.length) return {};
+    const slug=new URLSearchParams(location.search).get('case');
+    let i=all.findIndex(x=>x.slug===slug); if(i<0) i=0;
+    const c=all[i], n=all[(i+1)%all.length];
+    if(c && document.title.indexOf(c.client)<0) document.title=c.client+' – '+c.service+' | InBold';
+    return { c, bgimg:'url("'+c.img+'")',
+      story:[{n:'01',t:'The challenge',d:c.challenge},{n:'02',t:'What we did',d:c.approach},{n:'03',t:'The result',d:c.result}],
+      hasMetrics:c.metrics.length>0, metrics:c.metrics.map(([v,k])=>({v,k})),
+      hasQuote:!!c.quote, quote:c.quote?{q:c.quote[0],n:c.quote[1],r:c.quote[2]}:{},
+      next:{client:n.client,href:'Case.dc.html?case='+n.slug} };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</helmet>
+<header style="position:sticky;top:0;z-index:90;backdrop-filter:blur(10px);background:{{ bg }};border-bottom:1px solid {{ border }};font-family:Montserrat,Helvetica,Arial,sans-serif">
+  <nav style="max-width:1360px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:11px 28px">
+    <a href="Home v2.dc.html" style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;color:{{ fg }};text-decoration:none">InBold<span style="color:{{ accent }}">.</span></a>
+    <div style="display:flex;gap:2px;padding:3px;border-radius:2px;border:1px solid {{ border }};font-size:12px;font-weight:700;letter-spacing:.04em">
+      <a href="Agency.dc.html" style="text-decoration:none;font:inherit;padding:6px 13px;border-radius:2px;white-space:nowrap;background:{{ agencyBg }};color:{{ agencyFg }}">Agency</a>
+      <a href="Production.dc.html" style="text-decoration:none;font:inherit;padding:6px 13px;border-radius:2px;white-space:nowrap;background:{{ prodBg }};color:{{ prodFg }}">Production</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-left:auto;font-size:13px;font-weight:600">
+      <sc-for list="{{ shared }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="text-decoration:none;color:{{ item.color }};font-weight:{{ item.weight }};transition:color .2s">{{ item.label }}</a>
+      </sc-for>
+    </div>
+    <a href="Book a Call.dc.html" style="background:{{ ctaBg }};color:{{ ctaFg }};font-size:13px;font-weight:700;padding:8px 16px;border-radius:{{ ctaRadius }};text-decoration:none;white-space:nowrap">Book a call</a>
+  </nav>
+  <div style="border-top:1px solid {{ border }}">
+    <div style="max-width:1360px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:4px;overflow-x:auto;font-size:13px;font-weight:600;scrollbar-width:none">
+      <span style="flex:none;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:{{ accent }};padding-right:10px">{{ sectionLabel }}</span>
+      <sc-for list="{{ sub }}" as="s" hint-placeholder-count="6">
+        <a href="{{ s.href }}" style="flex:none;padding:10px 10px;color:{{ s.color }};font-weight:{{ s.weight }};text-decoration:none;white-space:nowrap;border-bottom:2px solid {{ s.line }}">{{ s.label }}</a>
+      </sc-for>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;agency&quot;,&quot;production&quot;],&quot;default&quot;:&quot;agency&quot;,&quot;tsType&quot;:&quot;'agency'|'production'&quot;},&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ff5a2b&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { mode: null };
+  renderVals() {
+    const p = this.props || {};
+    const dark = p.tone === 'dark';
+    const mode = this.state.mode || p.mode || 'agency';
+    const prod = mode === 'production';
+    const accent = p.accent || (prod ? '#ff5a2b' : '#ff5a2b');
+    const fg = dark ? '#f8f7f3' : '#10201b';
+    const muted = dark ? '#e9dfc8' : '#3d4a45';
+    const active = p.active || '';
+    const agencySub = [
+      ['Overview', 'Agency.dc.html', 'overview'], ['Branding', 'Branding.dc.html', 'branding'], ['Brand activation', 'Activation.dc.html', 'activation'],
+      ['PR & media relations', 'PR.dc.html', 'pr'], ['Influencers', 'Influencers.dc.html', 'influencers'], ['Digital & media', 'Digital.dc.html', 'digital']
+    ];
+    const prodSub = [
+      ['Overview', 'Production.dc.html', 'overview'], ['Marketing back office', 'Production Back Office.dc.html', 'backoffice'], ['Publishing', 'Production Publishing.dc.html', 'publishing'],
+      ['Print and packaging', 'Production Print.dc.html', 'print'], ['Ad production', 'Production Ads.dc.html', 'ads'], ['Your production team', 'Production Team.dc.html', 'team'], ['Compliance', 'Production Compliance.dc.html', 'compliance']
+    ];
+    const shared = [['Work', 'Work.dc.html', 'work'], ['Markets', 'Markets.dc.html', 'markets'], ['Company', 'Company.dc.html', 'company'], ['Insights', 'Insights.dc.html', 'insights'], ['Careers', 'Careers.dc.html', 'careers'], ['Contact', 'Contact.dc.html', 'contact']];
+    const map = ([label, href, key]) => { const on = key === active; return { label, href, color: on ? fg : muted, weight: on ? '800' : '600', line: on ? accent : 'transparent' }; };
+    const pillOnFg = dark ? '#0b3d32' : '#f8f7f3';
+    return {
+      shared: shared.map(map), sub: (prod ? prodSub : agencySub).map(map),
+      sectionLabel: prod ? 'Production' : 'Agency',
+      fg, accent,
+      toAgency: () => this.setState({ mode: 'agency' }),
+      toProduction: () => this.setState({ mode: 'production' }),
+      agencyBg: prod ? 'transparent' : fg, agencyFg: prod ? muted : pillOnFg,
+      prodBg: prod ? '#ff5a2b' : 'transparent', prodFg: prod ? '#fff' : muted,
+      bg: dark ? 'rgba(11,61,50,.95)' : (prod ? 'rgba(248,247,243,.94)' : 'rgba(248,247,243,.92)'),
+      border: dark ? 'rgba(255,255,255,.12)' : 'rgba(16,32,27,.12)',
+      ctaBg: prod ? '#ff5a2b' : fg, ctaFg: prod ? '#fff' : pillOnFg, ctaRadius: prod ? '3px' : '30px'
+    };
+  }
+}
+</script>
+</body>
+</html>
